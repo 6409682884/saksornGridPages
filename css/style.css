@@ -16,10 +16,26 @@ h1 {
 }
 
 h3 {
-    margin: 20px;
+    margin: 10px;
+    text-align: left;
+    font-size: 30px;
 }
 
-.header{
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        'header header header header header header'
+        'menu main main main right right'
+        'footer footer footer footer footer footer';
+    gap: 10px;
+    background-color: #FCF5ED;
+    padding: 0px;
+    font-size: 24px;
+}
+
+.grid-header {
+    grid-area: header;
     color: black;
     text-decoration-line: none;
 }
@@ -29,34 +45,31 @@ h3 {
     text-decoration-line: none;
 }
 
-.flex-container {
-    display: flex;
-    flex-direction: row;
-    font-size: 30px;
-    text-align: center;
-}
 
-.flex-item-left {
+.grid-item-menu {
+    grid-area: menu;
     background-color: #FCF5ED;
-    margin-top: -20px;
-    flex: 25%;
+    margin-top: -10px;
 }
 
-.flex-item-center {
+.grid-item-main {
+    grid-area: main;
+    text-align: center;
     padding: 15px;
-    flex: 66.66%;
     background-color: #F9E0BB;
     border-radius: 20px;
     margin: 5px;
 }
 
 
-.flex-item-right {
-    padding: 10px;
-    flex: 33.33%;
+.grid-item-right {
+    grid-area: right;
+    padding: 15px;
     background-color: #F9E0BB;
     border-radius: 20px;
     margin: 5px;
+    text-align: center;
+    height: fit-content;
 }
 
 li {
@@ -80,10 +93,12 @@ li:hover {
 
 .link>ul>li>a {
     display: block;
+    white-space: nowrap;
     color: black;
+    margin-right: 10px;
     text-align: left;
     text-decoration-line: none;
-    padding: 10px 0px 10px 20px;
+    padding: 10px 0px 10px 30px;
 }
 
 .link>ul>li>a:hover {
@@ -95,52 +110,97 @@ li:hover {
 
 .s-content {
     text-align: left;
-    margin: 30px;
-}
-.s-header {
-    text-align: center;
+    margin: 20px;
 }
 
-.flex-item-center>img {
+.s-header {
+    font-size: 30px;
+}
+
+.grid-item-main>img {
     width: 40%;
     border-radius: 20px;
-    margin-top: 0px;
+    margin: 0px;
 }
+
+
 .intro {
     text-align: left;
 }
 
-.footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.grid-footer {
+    grid-area: footer;
     background-color: #C38154;
     padding: 20px;
     margin-top: 20px;
+    font-size: 16px;
 }
 
-.inner-flex {
-    display: flex;
-    flex-direction: row;
-    flex: 75%;
+.info {
+    float: left;
 }
 
-p{
+.subject {
+    float: right;
+}
+
+p {
     font-size: 24px;
 }
 
 @media only screen and (max-width: 768px) {
-    .flex-container {
-        flex-direction: row;
+    .grid-container {
+        grid-template-areas:
+        'header header header header header header'
+        'menu main main main main main'
+        'menu right right right right right'
+        'footer footer footer footer footer footer';
     }
-    .inner-flex {
-        flex-direction: column;
+    li {
+        margin-bottom: 10px;
+        margin-left: -50px;
+        margin-right: 20px;
+        list-style-type: none;
+        background-color: #FFC26F;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        transition: 0.3s;
+    }
+    
+    li:hover {
+        margin-right: 5px;
+        background-color: #884A39;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    
+    }
+    
+    .link>ul>li>a {
+        display: block;
+        white-space: nowrap;
+        color: black;
+        text-align: left;
+        margin-right: 10px;
+        text-decoration-line: none;
+        padding: 10px 0px 10px 30px;
+    }
+    
+    .link>ul>li>a:hover {
+        color: white;
+        text-align: center;
+        text-decoration-line: none;
+        padding: 10px 0px 10px 30px;
     }
 }
 
 @media only screen and (max-width: 600px) {
-    .flex-container {
-        flex-direction: column;
+    .grid-container {
+        grid-template-areas:
+        'header header header header header header'
+        'menu menu menu menu menu menu'
+        'main main main main main main'
+        'right right right right right right'
+        'footer footer footer footer footer footer';
     }
 
     li {
@@ -152,16 +212,16 @@ p{
         border-radius: 20px;
         transition: 0.3s;
     }
-    
+
     li:hover {
         margin: unset;
         margin: 10px;
         margin-left: -27px;
         background-color: #884A39;
         border-radius: 20px;
-    
+
     }
-    
+
     .link>ul>li>a {
         display: block;
         color: black;
@@ -169,7 +229,7 @@ p{
         text-decoration-line: none;
         padding: 10px;
     }
-    
+
     .link>ul>li>a:hover {
         color: white;
         text-decoration-line: none;

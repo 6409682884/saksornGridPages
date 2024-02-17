@@ -60,6 +60,7 @@ h3 {
     background-color: #F9E0BB;
     border-radius: 20px;
     margin: 5px;
+    height: fit-content;
 }
 
 li {
