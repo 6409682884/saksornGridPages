@@ -49,7 +49,7 @@ h3 {
 .grid-item-menu {
     grid-area: menu;
     background-color: #FCF5ED;
-    margin-top: -15px;
+    margin-top: -18px;
 }
 
 .grid-item-main {
