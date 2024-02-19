@@ -235,4 +235,13 @@ p {
         text-decoration-line: none;
         padding: 10px;
     }
+    .info {
+        float: unset;
+        margin-bottom: 10px;
+    }
+    
+    .subject {
+        float: unset;
+        margin-bottom: 10px;
+    }
 }
